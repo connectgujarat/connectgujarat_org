@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#eeeeee"
+
+  >
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:elevation="2dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:id="@+id/comment_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:hint="name"
+            android:padding="4dp"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+
+            />
+
+
+        <TextView
+            android:id="@+id/comment_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="12dp"
+            android:hint="date"
+            android:padding="4dp"
+            android:textColor="#afaeae"
+
+            android:textSize="14sp"
+
+            />
+
+        <TextView
+            android:id="@+id/comment_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@id/comment_name"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="8dp"
+            android:hint="content"
+            android:padding="4dp"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+
+            />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="#eeeeee"
+
+
+        android:hint="content"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14sp"
+
+        />
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ConnectGujarat</string>
+    <string name="main_url">http://connectgujarat.com</string>
+    <string name="title_activity_newslist">newslist</string>
+<!--
+    <string name="gcm_defaultSenderId" translatable="false">429981039063</string>
+-->
+
+    <string name ="crash">Crash report</string>
+
+
+<!--
+    <string name="google_app_id">429981039063</string>
+-->
+
+</resources>

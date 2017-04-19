@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="76dp"
+    >
+    <!--<View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#d9d9d9"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        />-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingLeft="12dp"
+        android:background="#faffffff"
+        android:paddingRight="12dp"
+        >
+        <ImageView
+            android:id="@+id/img_thumbnail"
+            android:layout_marginRight="17dp"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:visibility="visible"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sendbird_ic_launcher"
+            android:layout_gravity="center_vertical"
+            />
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:id="@+id/txt_name"
+            android:text="User"
+            android:singleLine="true"
+            android:layout_marginBottom="8dp"
+            android:textSize="18sp"
+            android:textColor="#212121"
+            android:gravity="center_vertical"
+            />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:layout_gravity="center_vertical"
+            >
+            <CheckBox
+                android:id="@+id/chk_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/sendbird_chk_user"
+                android:checked="false"
+                android:visibility="gone"
+                android:layout_marginTop="18dp"
+                android:layout_gravity="right"
+                />
+            <TextView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:id="@+id/txt_status"
+                android:textSize="14sp"
+                android:textColor="#000000"
+
+                android:layout_gravity="top"
+                />
+            <TextView
+                android:id="@+id/txt_last_seen_at"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:textColor="#8e8e8e"
+                android:layout_marginTop="21dp"
+                android:layout_gravity="top|right"
+                android:visibility="gone"
+                />
+
+        </FrameLayout>
+
+    </LinearLayout>
+    <View
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="80dp"
+        android:background="#f4f0f0"
+        />
+</RelativeLayout>

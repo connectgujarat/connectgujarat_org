@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    android:id="@+id/home_page_overlay_rl"
+    android:layout_below="@id/toolbar"
+
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <ImageView
+        android:id="@+id/home_page_overlay_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+
+        android:scaleType="centerCrop"
+        android:src="@drawable/placeholder" />
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="false"
+        android:visibility="visible"
+        android:background="@drawable/home"
+
+        android:orientation="vertical"
+
+        android:paddingTop="8dp"
+        android:paddingLeft="8dp"
+
+        android:gravity="bottom"
+
+        android:paddingRight="8dp"/>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="200dp"
+            android:padding="10dp"
+            android:layout_height="60dp"
+
+            android:rotation="90"
+            android:background="@drawable/arrowupimage"/>
+        <ImageView
+            android:layout_width="200dp"
+            android:padding="10dp"
+            android:layout_height="60dp"
+
+            android:rotation="90"
+            android:background="@drawable/arrowupimage"/>
+        <ImageView
+            android:layout_width="200dp"
+            android:padding="10dp"
+            android:layout_height="60dp"
+
+            android:rotation="90"
+            android:background="@drawable/arrowupimage"/>
+        <ImageView
+            android:layout_width="200dp"
+            android:padding="10dp"
+            android:layout_height="60dp"
+
+            android:rotation="90"
+            android:background="@drawable/arrowupimage"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ImageView
+        android:id="@+id/home_page_overlay_down"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+
+        android:layout_gravity="right"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:rotation="180"
+        android:background="@drawable/arrowupimage"/>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/llll"
+
+        android:orientation="vertical"
+
+        android:paddingTop="8dp"
+        android:paddingLeft="8dp"
+        android:gravity="bottom"
+
+        android:paddingRight="8dp">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:layout_marginBottom="24dp"
+            android:textColor="#fff"
+
+
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:id="@+id/home_page_overlay_headline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="12dp"
+                android:text="Sample heading"
+                android:textColor="#fff"
+
+                android:textSize="24sp"
+
+                />
+            <!--<wirecamp.connectgujarat.CustomTextView
+                android:id="@+id/privacy_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:textColor="#646464"
+            android:text="Testing" />-->
+
+            <TextView
+                android:id="@+id/home_page_overlay_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="12dp"
+                android:layout_marginBottom="12dp"
+                android:textColor="#fff"
+
+                android:text="Sample date"
+
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+
+                android:layout_marginTop="6dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12dp"
+
+                    android:background="@drawable/orangeline"></LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/home_page_overlay_category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dp"
+                        android:text="Gujarat"
+                        android:textSize="14sp"
+                        android:textColor="#fff"
+
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/home_page_overlay_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dp"
+                        android:text="By: Connect Gujarat"
+                        android:textSize="14sp"
+                        android:textColor="#fff"
+
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible"
+
+
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="8dp"
+        android:text="Click here --> "
+        android:layout_marginBottom="12dp"
+        android:textSize="16sp"
+        android:textColor="#fff"
+
+        android:textStyle="bold" />
+</RelativeLayout>

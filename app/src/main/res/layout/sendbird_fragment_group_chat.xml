@@ -1,0 +1,120 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="8dp"
+            android:layout_margin="8dp"
+
+            android:transcriptMode="normal"
+            >
+        </ListView>
+       <!-- <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@drawable/sendbird_img_shadow"
+            android:visibility="gone"
+            />-->
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="4dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/whatsonyourmind"
+
+        >
+     <!--   <View
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#c5c5c5"
+            />-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            >
+<!--
+            android:background="@drawable/sendbird_chat_input_bg"
+-->
+            <LinearLayout
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:visibility="gone"
+                android:orientation="horizontal"
+
+                >
+                <ProgressBar
+                    android:id="@+id/progress_btn_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    />
+
+                <ImageButton
+                    android:id="@+id/btn_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sendbird_btn_upload"
+                    android:background="#00000000"
+                    android:visibility="visible"
+                    />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etxt_message"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="10dp"
+                android:layout_alignParentLeft="true"
+                android:paddingLeft="16dp"
+                android:singleLine="true"
+                android:textColorHint="#bbc3c9"
+                android:visibility="visible"
+                android:autoLink="web"
+
+                android:background="#ffffff"
+                android:hint="What's on your mind?"
+                android:textColor="#37434f"
+                android:textSize="16sp"
+                android:text=""
+                android:layout_toLeftOf="@+id/btn_send"
+                />
+            <Button
+                android:id="@+id/btn_send"
+                android:layout_width="36dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="6dp"
+                android:gravity="center"
+                android:layout_marginTop="2dp"
+
+                android:layout_height="36dp"
+
+                android:background="@drawable/send_pink"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</LinearLayout>

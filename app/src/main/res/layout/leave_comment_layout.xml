@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/leave_comment_rl"
+    android:visibility="gone"
+    android:background="#000000"
+
+    tools:context="profilecom.connectgujarat.MainActivity">
+    <!--  android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"-->
+    <Button
+        android:layout_width="32dp"
+        android:id="@+id/comment_back_btn"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/back_arrow"
+        android:layout_margin="10dp"
+        android:layout_height="32dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_margin="10dp"
+        android:paddingTop="8dp"
+        android:layout_centerHorizontal="true"
+        android:text="LEAVE A COMMENT"
+        android:textSize="18sp"
+        android:textColor="#fff"
+        android:layout_height="40dp"/>
+
+    <Button
+        android:layout_width="40dp"
+        android:id="@+id/leave_comment_close"
+        android:visibility="invisible"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:layout_height="40dp"/>
+
+<!--
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:background="#c4c4c4"
+        android:layout_below="@id/leave_comment_close"
+        android:layout_height="match_parent"-->>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#eeeeee"
+            android:layout_below="@id/leave_comment_close"
+
+
+            >
+            <TextView
+                android:id="@+id/nocomment_tv"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="There are no articles in this article.\nBe the first one to comment about this!"
+                android:textSize="14sp"
+
+                android:textStyle="normal" />
+
+            <ListView
+                android:layout_margin="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:padding="4dp"
+                android:id="@+id/listview_comment"
+                android:background="#eeeeee"
+
+                android:divider="@android:color/transparent"
+
+                android:textSize="14sp"
+
+                android:textStyle="normal" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#eae4e4"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical"
+                android:visibility="visible"
+
+                android:padding="16dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:hint="Your name"
+                    android:id="@+id/leave_comment_name"
+                    android:textColor="#000"
+                    android:textStyle="normal"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="14sp"
+                    android:hint="Your email address"
+                    android:id="@+id/leave_comment_email"
+                    android:textColor="#000"
+                    android:textStyle="normal"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:hint="Your comment"
+                    android:layout_marginTop="10dp"
+
+                    android:id="@+id/leave_comment_your_comment"
+                    android:textColor="#000"
+                    android:textStyle="normal"/>
+                <Button
+                    android:layout_below="@id/ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:padding="12dp"
+                    android:id="@+id/comment_send"
+                    android:visibility="invisible"
+                    android:layout_marginBottom="10dp"
+
+                    android:text="Send"/>
+
+            </LinearLayout>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/add_comment_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/send"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+<!--
+    </ScrollView>
+-->
+</RelativeLayout>

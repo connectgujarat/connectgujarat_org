@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contact_layout_rl"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:visibility="invisible"
+    tools:context="profilecom.connectgujarat.MainActivity">
+    <!--  android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"-->
+
+
+
+    <LinearLayout
+        android:layout_width="32dp"
+        android:id="@+id/ok"
+        android:layout_marginLeft="4dp"
+        android:padding="2dp"
+        android:layout_margin="10dp"
+        android:layout_alignParentLeft="true"
+
+        android:layout_height="32dp">
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/contact_back"
+            android:background="@drawable/back_arrow" />
+    </LinearLayout>
+
+
+    <!--  <Button
+          android:layout_width="40dp"
+          android:id="@+id/contact_close"
+          android:layout_alignParentRight="true"
+          android:background="@drawable/cross"
+          android:layout_margin="10dp"
+          android:layout_height="40dp"/>-->
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ok"
+        android:background="#c4c4c4">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="@android:color/white">
+
+            <LinearLayout
+                android:id="@+id/ll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contact\n\nWe welcome your inputs and communication\n\nAny type of communication"
+                    android:textSize="14sp"
+
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Your name (required)"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/contact_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:hint="Enter your name here"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Your Email (required)"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/contact_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+
+                    android:hint="Enter your email here"
+                    android:textSize="14sp"
+
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Subject"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/contact_subject"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:hint="Enter the subject here"
+                    android:textSize="14sp"
+
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Your message"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/contact_your_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:hint="Enter your message here!"
+
+                    android:textSize="14sp"
+
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/contact_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="20dp"
+                android:padding="12dp"
+
+                android:text="Send" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

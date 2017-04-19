@@ -1,0 +1,198 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:id="@+id/txt_left_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:visibility="gone"
+        android:paddingLeft="4dp"
+        android:paddingBottom="2dp"
+        android:textColor="#000000"
+
+        android:textSize="10sp"
+        />
+    <LinearLayout
+        android:id="@+id/left_container"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="left"
+        android:layout_marginTop="2dp"
+        android:visibility="visible">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible"
+
+            android:layout_gravity="bottom"
+            >
+            <ImageView
+                android:id="@+id/img_left_thumbnail"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/sendbird_ic_launcher"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/left_text_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|left"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:id="@+id/txt_left_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SenderName"
+                    android:visibility="gone"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    />
+                <TextView
+                    android:layout_marginTop="6dp"
+                    android:id="@+id/txt_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/final_pink_bubble"
+                    android:gravity="center"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:autoLink="web"
+
+
+
+                    android:text="sdsdsdsdssdsdsdsdssdsdsdsdssdsdsdsdssdsdsdsdssdsdsdsds"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp"
+                    android:padding="8dp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_right_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:visibility="gone"
+        android:layout_gravity="center"
+
+
+        android:textColor="#000"
+        android:textSize="10sp"
+        />
+    <LinearLayout
+        android:id="@+id/right_container"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="2dp"
+        android:visibility="visible">
+        <LinearLayout
+            android:weightSum="6"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            >
+
+            <LinearLayout
+                android:layout_weight="5.8"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:orientation="vertical"
+
+                >
+                <TextView
+                    android:id="@+id/txt_right_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SenderName"
+                    android:textColor="#000"
+
+
+                    android:visibility="gone"
+                    />
+                <TextView
+                    android:id="@+id/txt_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="2dp"
+
+                    android:background="@drawable/final_grey_bubble"
+                    android:autoLink="web"
+                    android:text="k"
+                    android:gravity="center"
+                    android:layout_gravity="right"
+                    android:textSize="15sp"
+                    android:textColor="#3d3d3d"
+                    android:padding="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="bottom"
+                android:layout_marginRight="4dp"
+
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:id="@+id/txt_right_status"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:textColor="#ac90ff"
+                    android:background="@drawable/status_read"
+                    android:textSize="10sp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="42dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+
+                >
+                <ImageView
+                    android:id="@+id/img_right_thumbnail"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/sendbird_ic_launcher"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

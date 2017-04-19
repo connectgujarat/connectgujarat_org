@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/toolbar"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#212121">
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <android.support.v4.view.ViewPager
+            android:id="@+id/vertical_viewpager"
+            android:layout_width="match_parent"
+            android:layout_below="@id/toolbar"
+            android:layout_height="match_parent" />
+
+    <include
+        layout="@layout/fragment_homepage"/>
+
+    <RelativeLayout
+        xmlns:components="http://schemas.android.com/apk/res/profilecom.connectgujarat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rlSplash"
+            android:visibility="visible"
+
+            android:background="#ffffff"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/splashImage"
+                    android:visibility="gone"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/toolbarlogo"/>
+
+        <profilecom.connectgujarat.GIFView
+            android:id="@+id/loj"
+
+        android:layout_width="wrap_content"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+
+        android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+
+        components:src="@drawable/llooggoo" />
+
+        <!--
+                android:progressDrawable="@drawable/custom_progressbar"
+                            style="?android:attr/progressBarStyleHorizontal"
+
+        -->
+
+                <ProgressBar
+                    android:id="@+id/pbSplash"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="false"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/splashImage"
+                    android:visibility="gone"
+                    />
+
+
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:id="@+id/chatpb"
+        android:layout_below="@+id/toolbar"
+
+        android:background="#40ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+    <ProgressBar
+        android:id="@+id/chatpbar"
+
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:indeterminate="false"
+
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="20dp"
+        />
+        </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/arrowlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#212121"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:layout_marginTop="8dp"
+            android:layout_centerHorizontal="true"
+            android:text="Menu" />
+
+        <ImageView
+            android:id="@+id/arrowup"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/arrowupimage" />
+
+        <LinearLayout
+            android:id="@+id/hidableRL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/arrowup"
+            android:background="#212121"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/arrowlayout_categories"
+
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="2"
+
+
+                    android:background="@drawable/catid" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="CATEGORIES"
+                    android:layout_marginTop="12dp"
+                    android:textColor="#fff"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/arrowlayout_story"
+
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_toRightOf="@+id/arrowlayout_categories"
+
+                    android:layout_weight="2"
+
+
+                    android:background="@drawable/story" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginTop="12dp"
+
+                    android:text="SUBMIT STORY"
+                    android:textColor="#fff"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/arrowlayout_contact"
+
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_toRightOf="@+id/arrowlayout_categories"
+
+                    android:layout_weight="2"
+
+
+                    android:background="@drawable/contact" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginTop="12dp"
+
+                    android:text="CONTACT"
+                    android:textColor="#fff"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/arrowlayout_chat"
+
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_toRightOf="@+id/arrowlayout_categories"
+
+                    android:layout_weight="2"
+
+
+                    android:background="@drawable/chat" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="CHAT"
+                    android:textColor="#fff"
+                    android:layout_marginTop="12dp"
+
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/arrowlayouthll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#212121"
+        android:visibility="gone">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:layout_marginTop="8dp"
+            android:layout_centerHorizontal="true"
+            android:text="Menu" />
+
+        <ImageView
+            android:id="@+id/arrowuphll"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/arrowupimage" />
+
+        <profilecom.connectgujarat.CategoryViews.HorizontalListView
+            android:id="@+id/customHorizontalListView"
+
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@id/arrowuphll"
+            android:background="#000" />
+    </RelativeLayout>
+
+
+    <include layout="@layout/story_layout"></include>
+
+    <include layout="@layout/contact_layout"></include>
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:layout_gravity="center_horizontal" />
+    <TextView
+        android:id="@+id/uploadding"
+        android:layout_below="@id/progressBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible"
+        android:text="Uploading your story..."
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:id="@+id/llu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:background="#000"
+        android:alpha="0.68"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/arrowlayouthll"
+        android:layout_toEndOf="@+id/arrowlayouthll" />
+</RelativeLayout>

@@ -1,0 +1,46 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#000</item>
+        <item name="colorPrimaryDark">#000</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="AppTheme2" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#000</item>
+        <item name="colorPrimaryDark">#000</item>
+        <item name="colorAccent">@color/colorAccent</item>
+<!--
+        <item name="android:popupMenuStyle">@style/MyApp.PopupMenu</item>
+-->
+
+        <item name="android:itemBackground">@drawable/menu_image</item>
+
+       <item name="android:panelFullBackground">@drawable/menu_image</item>
+        <item name="android:panelBackground">@drawable/menu_image</item>
+        <item name="android:panelColorBackground">@drawable/menu_image</item>
+        <item name="android:panelColorForeground">@drawable/menu_image</item>
+
+
+
+    </style>
+
+    <!-- The beef: background color for Action Bar overflow menu -->
+    <style name="MyApp.PopupMenu" parent="Theme.AppCompat.CompactMenu">
+        <item name="android:popupBackground">@drawable/menu_image</item>
+    </style>
+</resources>

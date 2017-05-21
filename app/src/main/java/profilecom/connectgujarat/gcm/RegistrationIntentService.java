@@ -20,75 +20,70 @@ import android.app.IntentService;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
+import android.text.TextUtils;
 import android.util.Log;
+import java.io.IOException;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class RegistrationIntentService extends IntentService {
 
-    private static final String TAG = "RegIntentService";
-    private static final String[] TOPICS = {"global"};
+  private static final String TAG = "RegIntentService";
+  private static final String[] TOPICS = { "global" };
 
-    public RegistrationIntentService() {
-        super(TAG);
-    }
+  public RegistrationIntentService() {
+    super(TAG);
+  }
 
+  public void SP(String key, String value) {
+    SharedPreferences sharedpreferences = getSharedPreferences("pref", Context.MODE_PRIVATE);
+    SharedPreferences.Editor editor = sharedpreferences.edit();
+    editor.putString(key, value);
+    editor.apply();
+  }
 
-    public void SP(String key, String value) {
-        SharedPreferences sharedpreferences = getSharedPreferences("pref", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedpreferences.edit();
-        editor.putString(key, value);
-        editor.commit();
-    }
+  public String getSP(String key) {
+    SharedPreferences sharedpreferences = getSharedPreferences("pref", Context.MODE_PRIVATE);
+    return sharedpreferences.getString(key, "");
+  }
 
-    public String getSP(String key) {
-        SharedPreferences sharedpreferences = getSharedPreferences("pref", Context.MODE_PRIVATE);
-        return sharedpreferences.getString(key, "");
-    }
+  @Override
+  protected void onHandleIntent(Intent intent) {
+    final SharedPreferences sharedpreferences = getSharedPreferences("pref", Context.MODE_PRIVATE);
+    final String fcmToken = sharedpreferences.getString("fcm_token", null);
+    final boolean fcmRegistered = sharedpreferences.getBoolean("fcm_registered", false);
 
-    @Override
-    protected void onHandleIntent(Intent intent) {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+    if (!fcmRegistered && !TextUtils.isEmpty(fcmToken)) {
 
-        try {
-            // [START register_for_gcm]
-            // Initially this call goes out to the network to retrieve the token, subsequent calls
-            // are local.
-            // R.string.gcm_defaultSenderId (the Sender ID) is typically derived from google-services.json.
-            // See https://developers.google.com/cloud-messaging/android/start for details on this file.
-            // [START get_token]
-           /* InstanceID instanceID = InstanceID.getInstance(this);
-            Log.i(TAG, "GCM SENDER ID:"+getString(R.string.gcm_defaultSenderId));
-            String token = instanceID.getToken(getString(R.string.gcm_defaultSenderId),
-                    GoogleCloudMessaging.INSTANCE_ID_SCOPE, null);
-            // [END get_token]
-            Log.i(TAG, "GCM Registration Token: " + token);
-           // SharedPreferences.Editor e = sharedPreferences.edit();
-            //e.putString("SendBirdGCMToken", token);
-            SP("SendBirdGCMToken", token);*/
+      RequestBody requestBody = new MultipartBody.Builder().setType(MultipartBody.FORM)
+        .addFormDataPart("token", fcmToken)
+        .addFormDataPart("os", "Android")
+        .build();
 
-            //e.commit();
-          //  com.google.firebase.messaging.
+      final Request request = new Request.Builder().url("http://connectgujarat.com/pnfw/register/")
+        .method("POST", RequestBody.create(null, new byte[0]))
+        .post(requestBody)
+        .build();
 
+      new OkHttpClient().newCall(request).enqueue(new Callback() {
+        @Override
+        public void onFailure(Call call, IOException e) {
 
-/*
-            SendBird.registerPushTokenForCurrentUser(token, new SendBird.RegisterPushTokenWithStatusHandler() {
-                @Override
-                public void onRegistered(SendBird.PushTokenRegistrationStatus pushTokenRegistrationStatus, SendBirdException e) {
-                    if (e != null) {
-                      //  Toast.makeText(RegistrationIntentService.this, "" + e.getCode() + ":" + e.getMessage(), Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-
-                    if (pushTokenRegistrationStatus == SendBird.PushTokenRegistrationStatus.PENDING) {
-                       // Toast.makeText(RegistrationIntentService.this,
-                       "Connection required to register push token.", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });*/
-            // [END register_for_gcm]
-        } catch (Exception e) {
-            Log.d(TAG, "Failed to complete token refresh", e);
         }
-    }
 
+        @Override
+        public void onResponse(Call call, Response response) throws IOException {
+          Log.d("Background service", response.body().toString());
+          if (response.body() != null && response.code() == 200 && !TextUtils.isEmpty(response.message())) {
+            sharedpreferences.edit().putBoolean("fcm_registered", true).apply();
+          }
+        }
+      });
+    }
+  }
 }

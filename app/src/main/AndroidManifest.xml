@@ -189,22 +189,22 @@
             </intent-filter>
         </receiver>-->
         <service
-            android:name=".gcm.MyGcmListenerService"
-            android:exported="false">
+            android:name=".gcm.MyGcmListenerService">
             <intent-filter>
                 <!--<action android:name="com.google.android.c2dm.intent.RECEIVE" />-->
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
+      <service
+          android:name=".gcm.MyInstanceIDListenerService">
+        <intent-filter>
+          <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+        </intent-filter>
+      </service>
+
         <service android:name=".gcm.RegistrationIntentService"
             android:exported="false" />
-        <service
-            android:name=".gcm.MyInstanceIDListenerService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.android.gms.iid.InstanceID" />
-            </intent-filter>
-        </service>
 
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->

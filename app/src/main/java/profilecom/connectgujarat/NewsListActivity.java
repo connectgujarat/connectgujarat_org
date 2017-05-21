@@ -42,13 +42,11 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.bumptech.glide.Glide;
 import com.sendbird.android.SendBird;
 import com.sendbird.android.SendBirdException;
 import com.sendbird.android.User;
 import com.squareup.picasso.Picasso;
-
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -61,10 +59,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-
 import profilecom.connectgujarat.CategoryViews.HorizontalListView;
 import profilecom.connectgujarat.DataServices.NewPostCacheManager;
-import profilecom.connectgujarat.R;
 import profilecom.connectgujarat.Services.NewCachingPaginateService;
 import profilecom.connectgujarat.Services.NewCategoryIndexService;
 import profilecom.connectgujarat.Services.NewGetLatestPostService;
@@ -72,6 +68,7 @@ import profilecom.connectgujarat.Services.StoryUploadService;
 import profilecom.connectgujarat.chat.ChatActivity;
 import profilecom.connectgujarat.chat.Helper;
 import profilecom.connectgujarat.chat.SendBirdGroupChannelListActivity;
+import profilecom.connectgujarat.gcm.RegistrationIntentService;
 import vn.tungdx.mediapicker.MediaItem;
 import vn.tungdx.mediapicker.MediaOptions;
 import vn.tungdx.mediapicker.activities.MediaPickerActivity;
@@ -348,7 +345,12 @@ public class NewsListActivity extends AppCompatActivity
         home_page_overlay_down = (ImageView) findViewById(R.id.home_page_overlay_down);
 
         //--
-
+        // Checking if we have registered token
+        final SharedPreferences sharedPreferences = getSharedPreferences("pref", MODE_PRIVATE);
+        final boolean fcmRegistered = sharedPreferences.getBoolean("fcm_registered", false);
+        if (!fcmRegistered) {
+            startService(new Intent(this, RegistrationIntentService.class));
+        }
         if (isNetworkAvailable() && getSP("firstcall").equals("")) {
 
             SP("firstcall", "true");

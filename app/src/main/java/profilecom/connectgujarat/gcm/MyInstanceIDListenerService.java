@@ -18,12 +18,12 @@
 
 package profilecom.connectgujarat.gcm;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
-
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
-import com.sendbird.android.SendBird;
-import com.sendbird.android.SendBirdException;
 
 public class MyInstanceIDListenerService extends FirebaseInstanceIdService {
 
@@ -41,10 +41,17 @@ public class MyInstanceIDListenerService extends FirebaseInstanceIdService {
         // Get updated InstanceID token.
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         Log.d(TAG, "Refreshed token: " + refreshedToken);
+        SharedPreferences.Editor editor = getSharedPreferences("pref", Context.MODE_PRIVATE).edit();
+        editor.putString("fcm_token", refreshedToken).apply();
+
+        Intent intent = new Intent(this, RegistrationIntentService.class);
+        startService(intent);
         // TODO: Implement this method to send any registration to your app's servers.
        // sendRegistrationToServer(refreshedToken);
 
 
+
+/*
         try{
         SendBird.registerPushTokenForCurrentUser(refreshedToken, new SendBird.RegisterPushTokenWithStatusHandler() {
             @Override
@@ -62,7 +69,8 @@ public class MyInstanceIDListenerService extends FirebaseInstanceIdService {
         // [END register_for_gcm]
     } catch (Exception e) {
         Log.d(TAG, "Failed to complete token refresh", e);
-    }
+    }*/
+
     }
 
     /**

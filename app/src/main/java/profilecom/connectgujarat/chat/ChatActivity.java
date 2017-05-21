@@ -115,7 +115,7 @@ public class ChatActivity extends AppCompatActivity implements FBlistener, Googl
     private enum State {DISCONNECTED, CONNECTING, CONNECTED}
 
     /**
-     * To test push notifications with your own appId, you should replace google-services.json with yours.
+     * To test push notifications with your own appId, you should replace google-services-old with yours.
      * Also you need to set Server API Token and Sender ID in SendBird dashboard.
      * Please carefully read "Push notifications" section in SendBird Android documentation
      */

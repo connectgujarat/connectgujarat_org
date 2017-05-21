@@ -1,33 +1,20 @@
 {
   "project_info": {
-    "project_number": "648790959234",
-    "project_id": "connectgujaratproduction"
+    "project_number": "365949385394",
+    "project_id": "firebase-connectgujarat"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:648790959234:android:dadea2351e99596c",
+        "mobilesdk_app_id": "1:365949385394:android:dadea2351e99596c",
         "android_client_info": {
           "package_name": "profilecom.connectgujarat"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "648790959234-nepsrimg19tlqe56lu1cpp3ojn2epmed.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "profilecom.connectgujarat",
-            "certificate_hash": "0e3dc4196ba8fc9748f7dc1ee5b6b48d4a296fad"
-          }
-        },
-        {
-          "client_id": "648790959234-o93khhsp62erv3bmaneournlbq0cibcj.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCkzCM5gkO-ASUCMjhTNni9EUsmhihLOcg"
+          "current_key": "AIzaSyBi5GWK-98uNu5exsiSNlPUOk01b8UI_nI"
         }
       ],
       "services": {

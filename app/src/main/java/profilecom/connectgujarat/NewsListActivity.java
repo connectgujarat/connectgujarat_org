@@ -159,7 +159,21 @@ public class NewsListActivity extends AppCompatActivity
 
 
         viewPager.setAdapter(adapter);
+
+        final Intent intent = getIntent();
+        if (intent != null && intent.getBooleanExtra("refresh", false)) {
+            postsFragment.setRefresh();
+        }
+
         // viewPager.requestDisallowInterceptTouchEvent(true);
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        if (intent != null && intent.getBooleanExtra("refresh", false)) {
+            postsFragment.setRefresh();
+        }
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {

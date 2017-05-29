@@ -20,11 +20,8 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import java.util.List;
-
 import profilecom.connectgujarat.DataServices.NewPostCacheManager;
-import profilecom.connectgujarat.R;
 import profilecom.connectgujarat.Services.NewCachingPaginateService;
 import profilecom.connectgujarat.Services.NewCachingSwipeService;
 
@@ -45,6 +42,7 @@ public class PostsFragment extends Fragment {
     static String afterDate;
     static int idofFirst, catFirstPostId;
     private static ProgressBar progressBarPaginate;
+    private boolean refresh = false;
 
 
     public PostsFragment() {
@@ -159,28 +157,38 @@ public class PostsFragment extends Fragment {
             @Override
             public void onRefresh() {
 
-                if (isNetworkAvailable()) {
-                    Intent intent = new Intent(getActivity(),
-                            NewCachingSwipeService.class);
-
-                    intent.putExtra("categoryId", catFirstPostId);
-                    intent.putExtra("afterDate", afterDate);
-                    intent.putExtra("count", 10);
-
-                    getActivity().startService(intent);
-
-
-                } else {
-                    swipe.setRefreshing(false);
-
-                }
-
-
+                refreshViews();
             }
         });
 
 
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (refresh) {
+            refreshViews();
+            refresh = false;
+        }
+    }
+
+    public void refreshViews() {
+        if (isNetworkAvailable()) {
+            Intent intent = new Intent(getActivity(),
+                    NewCachingSwipeService.class);
+
+            intent.putExtra("categoryId", catFirstPostId);
+            intent.putExtra("afterDate", afterDate);
+            intent.putExtra("count", 10);
+
+            getActivity().startService(intent);
+
+
+        } else {
+            swipe.setRefreshing(false);
+
+        }
     }
 
     public String getTitle() {
@@ -386,5 +394,9 @@ public class PostsFragment extends Fragment {
         SharedPreferences sharedpreferences =
                 getActivity().getSharedPreferences("pref", Context.MODE_PRIVATE);
         return sharedpreferences.getString(key, "");
+    }
+
+    public void setRefresh() {
+        refresh = true;
     }
 }

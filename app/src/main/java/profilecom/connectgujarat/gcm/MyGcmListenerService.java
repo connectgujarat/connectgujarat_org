@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
-import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.text.TextUtils;
 import com.google.firebase.messaging.FirebaseMessagingService;
@@ -58,7 +57,7 @@ public class MyGcmListenerService extends FirebaseMessagingService {
      */
     private void sendNotification(String message) {
         Intent intent = new Intent(this, NewsListActivity.class);
-        intent.putExtras(new Bundle());
+        intent.putExtra("refresh", true);
 
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)

@@ -47,7 +47,7 @@
 
         <activity android:name=".NewsListActivity"
             android:hardwareAccelerated="false"
-
+            android:launchMode="singleTop"
             android:theme="@style/AppTheme2"
             android:screenOrientation="portrait">
             <intent-filter>

@@ -7,12 +7,11 @@ import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
-import android.text.TextUtils;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import java.util.Map;
 import java.util.Random;
-import profilecom.connectgujarat.NewsListActivity;
+import profilecom.connectgujarat.NewsDetailsActivity;
 import profilecom.connectgujarat.R;
 
 
@@ -42,12 +41,26 @@ public class MyGcmListenerService extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage){
         String message = remoteMessage.getFrom();
-        Map data = remoteMessage.getData();
+        Map<String, String> data = remoteMessage.getData();
+        final Intent intent = new Intent(this, NewsDetailsActivity.class);
+        intent.putExtra("title", data.get("title"));
+        intent.putExtra("author", data.get("post_author"));
+        intent.putExtra("date", data.get("post_date"));
+        intent.putExtra("url", data.get("post_image"));
+        intent.putExtra("content", data.get("post_content"));
+        //intent.putExtra("cat", data.get("post_category"));
+        intent.putExtra("cat", -9999);
+        intent.putExtra("posturl", data.get("post_URL"));
+        //intent.putExtra("posturl", "https://connectgujarat.com/2017/07/07/shahrukh-anushka-pose-with-new-poster-of-jab-harry-met-sejal/");
+        intent.putExtra("postId", data.get("id"));
 
-        final String title = (String) data.get("title");
-        if (!TextUtils.isEmpty(title)) {
-            sendNotification(title);
-        }
+        sendNotification(data.get("title"), intent);
+
+        //final String title = (String) data.get("title");
+        //final Object url = data.get("post_URL");
+        //if (!TextUtils.isEmpty(title)) {
+        //    sendNotification(title, url);
+        //}
     }
 
     /**
@@ -55,9 +68,7 @@ public class MyGcmListenerService extends FirebaseMessagingService {
      *
      * @param message GCM message received.
      */
-    private void sendNotification(String message) {
-        Intent intent = new Intent(this, NewsListActivity.class);
-        intent.putExtra("refresh", true);
+    private void sendNotification(final String message, final Intent intent) {
 
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)

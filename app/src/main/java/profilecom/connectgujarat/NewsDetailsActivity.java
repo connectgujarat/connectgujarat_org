@@ -33,9 +33,7 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.squareup.picasso.Picasso;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -43,8 +41,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-
-import profilecom.connectgujarat.R;
 import profilecom.connectgujarat.Services.CommentAddService;
 import profilecom.connectgujarat.Services.CommentDetails;
 import profilecom.connectgujarat.Services.CommentRetreiveService;
@@ -462,7 +458,10 @@ public class NewsDetailsActivity extends AppCompatActivity implements
         tts.shutdown();
         Helper.hideKeyboard(this);
         SP("movetoDetails", "");
-
+        if (isTaskRoot()) {
+            startActivity(new Intent(this, NewsListActivity.class));
+        }
+        finish();
 //        progressBar1.setVisibility(View.INVISIBLE);
     }
 

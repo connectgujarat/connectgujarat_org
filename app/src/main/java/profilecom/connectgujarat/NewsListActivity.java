@@ -137,7 +137,7 @@ public class NewsListActivity extends AppCompatActivity
         SharedPreferences sharedpreferences = getSharedPreferences("pref", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedpreferences.edit();
         editor.putString(key, value);
-        editor.commit();
+        editor.apply();
     }
 
     public String getSP(String key) {

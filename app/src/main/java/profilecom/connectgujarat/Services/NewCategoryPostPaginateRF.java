@@ -1,24 +1,20 @@
 package profilecom.connectgujarat.Services;
 
 import android.util.Log;
-
 import com.google.gson.Gson;
-
-import org.json.JSONArray;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
+import org.json.JSONArray;
+import profilecom.connectgujarat.Entities.NewCategoryPosts.GetCategoryPost;
+import profilecom.connectgujarat.Entities.NewCategoryPostsModified.ExamplePosts;
+import profilecom.connectgujarat.Entities.NewCategoryPostsModified.Post;
+import profilecom.connectgujarat.Locality;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import profilecom.connectgujarat.Entities.NewCategoryPosts.GetCategoryPost;
-import profilecom.connectgujarat.Entities.NewCategoryPostsModified.ExamplePosts;
-import profilecom.connectgujarat.Entities.NewCategoryPostsModified.Post;
-import profilecom.connectgujarat.Locality;
 
 
 public class NewCategoryPostPaginateRF {
@@ -60,7 +56,7 @@ public class NewCategoryPostPaginateRF {
     }
 
 
-    public void getNewPaginatedPosts(final int catid, String date, int count) {
+    public void getNewPaginatedPosts(final int catid, final String date, final int count) {
 
         Call<ExamplePosts> repoMedia = service.GetCategoryPaginatePosts(catid, date, count);
         Log.d("url", "url(getNewPaginatedPosts)=>" +service.GetCategoryPaginatePosts(catid, date, count).request().url().toString());
@@ -72,6 +68,7 @@ public class NewCategoryPostPaginateRF {
             public void onResponse(Call<ExamplePosts> call,
                                    Response<ExamplePosts> response) {
 
+                Log.d("CategoryPost", "url = " +service.GetCategoryPaginatePosts(catid, date, count).request().url().toString());
                 ArrayList<Locality> localityList = new ArrayList<Locality>();
                 JSONArray posts = null;
 

@@ -3,7 +3,6 @@ package profilecom.connectgujarat.Entities.NewCategoryPostsModified;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 import java.util.List;
 
 public class Post {
@@ -62,9 +61,9 @@ public class Post {
     @SerializedName("comment_status")
     @Expose
     private String commentStatus;
-    @SerializedName("thumbnail")
-    @Expose
-    private Object thumbnail;
+    //@SerializedName("thumbnail")
+    //@Expose
+    //private Object thumbnail;
     @SerializedName("custom_fields")
     @Expose
     private CustomFields customFields;
@@ -219,13 +218,13 @@ public class Post {
         this.commentStatus = commentStatus;
     }
 
-    public Object getThumbnail() {
-        return thumbnail;
-    }
-
-    public void setThumbnail(Object thumbnail) {
-        this.thumbnail = thumbnail;
-    }
+    //public Object getThumbnail() {
+    //    return thumbnail;
+    //}
+    //
+    //public void setThumbnail(Object thumbnail) {
+    //    this.thumbnail = thumbnail;
+    //}
 
     public CustomFields getCustomFields() {
         return customFields;
@@ -272,7 +271,7 @@ public class Post {
                 ", attachments=" + attachments +
                 ", commentCount=" + commentCount +
                 ", commentStatus='" + commentStatus + '\'' +
-                ", thumbnail=" + thumbnail +
+                //", thumbnail=" + thumbnail +
                 ", customFields=" + customFields +
                 ", thumbnailSize='" + thumbnailSize + '\'' +
                 ", thumbnailImages=" + thumbnailImages +
